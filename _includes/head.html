@@ -43,6 +43,9 @@
     if (localStorage.getItem("theme") === "dark") {
       document.documentElement.setAttribute("dark", "");
       document.documentElement.classList.add('dark-mode');
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute("dark", "");
+      document.documentElement.classList.add('dark-mode');
     }
     {% elsif site.data.settings.color_scheme == "light" %}
       document.documentElement.setAttribute("light", "");
